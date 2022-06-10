@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'pages/base.html' %}
+<html>
+<head>
+	<title>Uploaded projects</title>
+</head>
+<body>
+	{% block content %}
+	{%  for projects in project %}
+	{{projects.title}}
+	{{projects.desc}}
+	{{projects.date}}
+	<br>
+	{% endfor %}
+	{% endblock content %}
+</body>
+</html>

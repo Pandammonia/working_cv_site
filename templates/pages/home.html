@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'pages/base.html' %}
+{% block content %}
+<html>
+<head>
+	   <meta charset="UTF-8">  
+    <title>login</title>  
+    {% load static %}  
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">  
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>  
+	<title>CV</title>
+</head>
+<body>
+	<h1>Luke Peacocks CV</h1>
+	<p>This is a website i have put together using python and django to store projects i have worked on using a combination of HTML, CSS, Python, Django and SQL.</p>
+
+	<p><a href="{% url 'pages:projects' %}">Projects</a> This page contains projects i have worked on and a short description of their function and design. <br></p>
+
+	<p><a href="{% url 'board:index' %}">Message board</a> Here you can find a small message board where you can start a thread and we will be able to reply to one another. <br> </p>
+
+	<p><a href="{% url 'pages:about' %}">About me</a> This page contains a small personal bio and contact details for myself.<br></p>
+{% endblock content %}
+</body>
+</html>
