@@ -24,14 +24,17 @@ def newmsg(request):
 	context = {'form': form}
 	return render(request, 'board/newmsg.html', context)
 
-def newreply(request):
+def newreply(request, post_id):
+	post = Post.objects.get(id=post_id)
 	if request.method != "POST":
 		form = ReplyForm()
 	else:
 		form = ReplyForm(data=request.POST)
 		if form.is_valid():
-			form.save()
+			newreply= form.save(commit=False)
+			newreply.post = post
+			newreply.save()
 			return redirect('board:index')
-	context = {'form':form}
+	context = {'form':form, 'post':post}
 	return render(request, 'board/newreply.html', context)
 

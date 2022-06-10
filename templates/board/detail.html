@@ -23,7 +23,7 @@
     Message: {{reply.body}} <br>
     Posted by: {{reply.author}} on {{reply.added}} <br><br><br>
     {% endfor %}
-    <a href="{% url 'board:newreply' %}">Add a reply here</a>
+    <a href="{% url 'board:newreply' post.id %}">Add a reply here</a>
 </li>
 </body>
 {% endblock content %}

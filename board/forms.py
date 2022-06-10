@@ -10,5 +10,5 @@ class PostForm(forms.ModelForm):
 class ReplyForm(forms.ModelForm):
 	class Meta:
 		model = Reply
-		fields = ['title', 'body', 'author']
+		fields = ['post', 'title', 'body', 'author']
 		labels = []

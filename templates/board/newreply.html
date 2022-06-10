@@ -2,7 +2,7 @@
 {% block content %}
 
 <p>Add your reply here</p>
-<form action="{% url 'board:newreply' %}"method ='POST'>
+<form action="{% url 'board:newreply' post.id %}"method ='post'>
 	{% csrf_token %}
 	{{ form.as_p }}
 	<button name = "submit">Add post</button>
