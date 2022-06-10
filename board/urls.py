@@ -6,4 +6,6 @@ app_name = 'board'
 urlpatterns = [
 	path('', views.index, name='index'),
 	path('<int:post_id>/', views.postdetail, name='detail'),
+	path('newmsg/', views.newmsg, name='newmsg'),
+	path('newreply/', views.newreply, name='newreply'),
 ]

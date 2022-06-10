@@ -19,6 +19,8 @@
         <a href="{% url 'board:detail' post.id %}">{{post.title}}</a>
     {% endfor %}
 </li>
+<br><br><br>
+<a href="{% url 'board:newmsg' %}">Leave a message!</a>
 </body>
 {% endblock content %}
 </html>
