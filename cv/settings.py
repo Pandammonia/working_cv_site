@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'board',
+    'membersection',
     ]
 
 MIDDLEWARE = [
@@ -134,7 +135,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
-
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = '/'
 # Heroku settings.
 import django_heroku
 django_heroku.settings(locals())

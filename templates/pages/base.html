@@ -6,7 +6,15 @@
     <a href="{% url 'pages:home' %}">Home</a>
     <a href="{% url 'pages:projects' %}">Projects</a>
     <a href="{% url 'board:index' %}">Message board</a>
-    <a href="{% url 'pages:about' %}">About me</a><br><br>
+    <a href="{% url 'pages:about' %}">About me</a><br>
+    <a href="{% url 'members:index' %}">Members area</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'users:logout' %}">Logout</a> <br><br>
+    {% else %}
+    <a href="{% url 'users:login' %}">Login</a> 
+    <a href="{% url 'users:register' %}">Register</a><br><br>
+    {% endif %}
+
     {% block content %}{% endblock content %}
 </body>  
 </html>  

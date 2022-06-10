@@ -35,6 +35,7 @@ def newreply(request, post_id):
 			newreply.post = post
 			newreply.save()
 			return redirect('board:index')
-	context = {'form':form, 'post':post}
+	context = {'form':form, 'post':post }
 	return render(request, 'board/newreply.html', context)
+
 
