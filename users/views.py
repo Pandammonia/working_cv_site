@@ -4,13 +4,13 @@ from .forms import CustomUserCreationForm
 
 def register(request):
 	if request.method == 'POST':
-		form = CustomUserCreationForm()
-	else:
-		form = CustomUserCreationForm(data=request.POST)
+		form = CustomUserCreationForm(request.POST)
 		if form.is_valid():
 			new_user = form.save()
 			login(request, new_user)
 			return redirect('pages:home')
+	else:
+		form = CustomUserCreationForm()
 	context = {'form':form}
 	return render (request, 'registration/register.html', context)
 

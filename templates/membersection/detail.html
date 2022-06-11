@@ -1,0 +1,16 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+<head>
+     <meta charset="UTF-8">  
+    <title>Detail</title>  
+    {% load static %}  
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">  
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>  
+  <title></title>
+  </head>
+<h1>Job Title: {{job.jobtitle}}</h1><br>
+     <p>Job description: {{job.jobdesc}}</p><br>
+     <p>Job price: {{job.price}}</p>
+
+{% endblock content %}
