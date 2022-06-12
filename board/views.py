@@ -7,8 +7,8 @@ def index(request):
 	context = {'posts':posts}
 	return render(request, 'board/index.html', context)
 
-def postdetail(request, post_id):
-	post = Post.objects.get(id=post_id)
+def postdetail(request, slug):
+	post = Post.objects.get(slug=slug)
 	replies = post.reply_set.order_by('added')
 	context = {'post':post, 'replies':replies}
 	return render(request, 'board/detail.html', context)

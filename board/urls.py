@@ -5,7 +5,7 @@ from . import views
 app_name = 'board'
 urlpatterns = [
 	path('', views.index, name='index'),
-	path('<int:post_id>/', views.postdetail, name='detail'),
+	path('<slug:slug>/', views.postdetail, name='detail'),
 	path('newmsg/', views.newmsg, name='newmsg'),
 	path('newreply/<int:post_id>/', views.newreply, name='newreply'),
 ]
